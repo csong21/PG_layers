@@ -30,18 +30,19 @@
 
   <script>
   var map;
-  function init(){
+    function init(){
     // initiate leaflet map
     map = new L.Map('map', { 
       center: [20,-20],
       zoom: 3
     })
 
+
+
     L.tileLayer('https://dnv9my2eseobd.cloudfront.net/v3/cartodb.map-4xtxp73f/{z}/{x}/{y}.png', {
-      attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+      attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>' 
     }).addTo(map);
-  }
-  var layerUrl = 'https://wri-01.cartodb.com/api/v2/viz/07c315f8-c13e-11e4-b457-0e8dde98a187/viz.json';
+    var layerUrl = 'https://wri-01.cartodb.com/api/v2/viz/07c315f8-c13e-11e4-b457-0e8dde98a187/viz.json';
 
   var sublayers = [];
 
@@ -62,6 +63,8 @@
     }).on('error', function() {
       //log the error
     });
+  }
+
   </script>
 </head>
 
