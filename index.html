@@ -41,27 +41,27 @@
       attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
     }).addTo(map);
   }
-  var layerUrl = 'http://documentation.cartodb.com/api/v2/viz/9af23dd8-ea10-11e2-b5ac-5404a6a683d5/viz.json';
+  var layerUrl = 'https://wri-01.cartodb.com/api/v2/viz/07c315f8-c13e-11e4-b457-0e8dde98a187/viz.json';
 
-var sublayers = [];
+  var sublayers = [];
 
-cartodb.createLayer(map, layerUrl)
-  .addTo(map)
-  .on('done', function(layer) {
-    // change the query for the first layer
-    var subLayerOptions = {
-      sql: "SELECT * FROM ne_10m_populated_places_simple",
-      cartocss: "#ne_10m_populated_places_simple{marker-fill: #F84F40; marker-width: 8; marker-line-color: white; marker-line-width: 2; marker-clip: false; marker-allow-overlap: true;}"
-    }
+  cartodb.createLayer(map, layerUrl)
+    .addTo(map)
+    .on('done', function(layer) {
+      // change the query for the first layer
+      var subLayerOptions = {
+        sql: "SELECT * FROM ne_10m_populated_places_simple",
+        cartocss: "#ne_10m_populated_places_simple{marker-fill: #F84F40; marker-width: 8; marker-line-color: white; marker-line-width: 2; marker-clip: false; marker-allow-overlap: true;}"
+      }
 
-    var sublayer = layer.getSubLayer(0);
+      var sublayer = layer.getSubLayer(0);
 
-    sublayer.set(subLayerOptions);
+      sublayer.set(subLayerOptions);
 
-    sublayers.push(sublayer);
-  }).on('error', function() {
-    //log the error
-  });
+      sublayers.push(sublayer);
+    }).on('error', function() {
+      //log the error
+    });
   </script>
 </head>
 
