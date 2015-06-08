@@ -51,7 +51,7 @@
     .on('done', function(layer) {
       // change the query for the first layer
       var subLayerOptions = {
-        sql: "SELECT * FROM ne_10m_populated_places_simple",
+        sql: "SELECT * FROM malaysia_peat",
         cartocss: "#ne_10m_populated_places_simple{marker-fill: #F84F40; marker-width: 8; marker-line-color: white; marker-line-width: 2; marker-clip: false; marker-allow-overlap: true;}"
       }
 
@@ -75,7 +75,7 @@
     },
     megacities: function() {
       sublayers[0].set({
-        sql: "SELECT * FROM ne_10m_populated_places_simple WHERE megacity = 1",
+        sql: "SELECT * FROM malaysia_peat WHERE f_area >= 1000",
         //as it is said, you can also add some CartoCSS code to make your points look like you want for the different queries
        // cartocss: "#ne_10m_populated_places_simple{ marker-fill: black; }"
       });
